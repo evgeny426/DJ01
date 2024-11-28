@@ -4,10 +4,16 @@ from django.http import HttpResponse
 # Create your views here.
 
 def index(request):
-    return HttpResponse("<h1>Это мой первый проект на Django</h1>")
+    data = {
+        'caption': 'ShrekDjango'
+    }
+    return render(request, 'my_app/index.html', data)
 
 def data(request):
-    return HttpResponse("<h1>Это страница 'data'</h1>")
+    return render(request, 'my_app/data.html')
 
 def test(request):
-    return HttpResponse("<h1>Это страница 'test'</h1>")
+    return render(request, 'my_app/test.html')
+
+def four(request):
+    return render(request, 'my_app/four.html')
